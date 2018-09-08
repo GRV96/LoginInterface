@@ -1,5 +1,3 @@
-//package ca.etsmtl.log240.financej;
-
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
@@ -72,7 +70,7 @@ public class LoginDialog extends JDialog {
      */
     private void initErrorLabel(){
 
-        Font errorFont = new java.awt.Font("Dialog", Font.PLAIN, 14);
+        Font errorFont = new Font("Dialog", Font.PLAIN, 14);
         errorLbl = new JLabel("");
         errorLbl.setFont(errorFont);
         errorLbl.setForeground(Color.RED);
@@ -124,7 +122,10 @@ public class LoginDialog extends JDialog {
     }
 
     /**
-     * Instantiates and sets up the login button.
+     * Instantiates and sets up a panel
+     * containing the login and cancel buttons.
+     * @return
+     * 		a JPanel containing the two buttons
      */
     private javax.swing.JPanel initBtnPanel(){
 
@@ -164,8 +165,8 @@ public class LoginDialog extends JDialog {
     }
     
     /**
-     * If the username and password match, the connexion
-     * interface disapears. The user may acces the application.
+     * If the username and password match, the connexion interface
+     * disapears. The user may then access the application.
      */
     private void attemptConnexion() {
     	
@@ -188,13 +189,13 @@ public class LoginDialog extends JDialog {
      * @return
      * 		True if the user is connected
      */
-    public boolean isUserConnected(){return userConnected;}
+    public boolean isUserConnected() {return userConnected;}
 
     @Override
     public void setVisible(boolean b){
 
         // This JFrame is visible when no user is connected.
-        if(b){userConnected = false;}
+        if(b) {userConnected = false;}
         super.setVisible(b);
     }
     
@@ -213,7 +214,7 @@ public class LoginDialog extends JDialog {
 
     /**
      * The ActionListener for the login button.
-     * @author Guyllaume Rousseau
+     * @author GRV96
      */
     private class LoginListener implements ActionListener{
 
@@ -225,7 +226,7 @@ public class LoginDialog extends JDialog {
 
     /**
      * The ActionListener for the cancel button.
-     * @author Guyllaume Rousseau
+     * @author GRV96
      *
      */
     private class CancelListener implements ActionListener{
@@ -239,7 +240,7 @@ public class LoginDialog extends JDialog {
     /**
      * The KeyListener for the password field. It
      * starts the connexion process when Enter is typed.
-     * @author Guyllaume Rousseau
+     * @author GRV96
      *
      */
     private class EnterKeyListener implements KeyListener{

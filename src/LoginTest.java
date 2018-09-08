@@ -1,5 +1,4 @@
-//package ca.etsmtl.log240.financej;
-
+import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
@@ -12,40 +11,40 @@ public class LoginTest {
 	public static void main(String[] args) {
 		
 		//*
-        JFrame fenetre = new JFrame();
-        fenetre.setSize(500, 500);
-        fenetre.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        fenetre.setLocationRelativeTo(null);
+        JFrame frame = new JFrame();
+        frame.setSize(500, 500);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setLocationRelativeTo(null);
 
-        JLabel etiquette = new javax.swing.JLabel("Connexion requise");
+        JLabel label = new JLabel("Connection required");
 
-        ActionListener ecouteur = new ActionListener(){
+        ActionListener listener = new ActionListener(){
 
-            public void actionPerformed(java.awt.event.ActionEvent e){
+            public void actionPerformed(ActionEvent e){
 
-                LoginDialog ld = new LoginDialog(fenetre);
+                LoginDialog ld = new LoginDialog(frame);
                 ld.setVisible(true);
 
                 if(ld.isUserConnected()){
 
-                    etiquette.setText("Connexion réussie");
+                    label.setText("Connection succeeded");
                 }
                 else{
 
-                    etiquette.setText("Connexion échouée");
+                    label.setText("Connection failed");
                 }
             }
         };
 
-        JButton btn = new JButton("Connexion");
-        btn.addActionListener(ecouteur);
+        JButton btn = new JButton("Connection");
+        btn.addActionListener(listener);
 
         JPanel cp = new JPanel();
-        cp.add(etiquette);
+        cp.add(label);
         cp.add(btn);
 
-        fenetre.setContentPane(cp);
-        fenetre.setVisible(true);
+        frame.setContentPane(cp);
+        frame.setVisible(true);
         //*/
         
 		/*
